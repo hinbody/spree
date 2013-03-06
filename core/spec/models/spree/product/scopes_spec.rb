@@ -42,4 +42,11 @@ describe "Product scopes" do
       Spree::Product.not_deleted.should include(product)
     end
   end
+
+  context "on_hand + in_taxon" do
+    FactoryGirl.create(:taxon)
+    it "on_hand and in_taxon can be used together" do
+    Spree::Product.on_hand.in_taxon(Spree::Taxon.first).first
+    end
+  end
 end
