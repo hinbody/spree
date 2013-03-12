@@ -47,8 +47,8 @@ describe "Product scopes" do
     before do
       FactoryGirl.create(:taxon)
     end
-      it "on_hand and in_taxon can be used together" do
-        Spree::Product.on_hand.in_taxon(Spree::Taxon.first)
+    it "on_hand and in_taxon can be used together" do
+      Spree::Product.on_hand.in_taxon(Spree::Taxon.first)
     end
   end
 end
